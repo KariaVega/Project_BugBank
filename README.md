@@ -3,7 +3,8 @@
 
 ### :page_facing_up: *Documentación utilizada:* 
 - Dirección del servidor: [Link de aplicacion](https://bugbank.netlify.app/)
-
+- Requisitos: [Link de requerimientos](https://bugbank.netlify.app/requirements)
+  
 ### 🛠️ *Lenguajes y herramientas utilizadas:*
 <div id="header" align="left">
     
@@ -17,6 +18,7 @@
 - Pytest
 - Pip
 
+<img decoding="async" src="https://img.shields.io/badge/DOM-purple?style=for-the-badge&logo=Drawio&logoColor=white" alt="Drawio"/>
 <img decoding="async" src="https://img.shields.io/badge/DevTools-D80B01?style=for-the-badge&logo=Drawio&logoColor=white" alt="Drawio"/>
 <img decoding="async" src="https://img.shields.io/badge/Python-0052CC?style=for-the-badge&logo=python&logoColor=white" alt="python"/>
 <img decoding="async" src="https://img.shields.io/badge/PyCharm-808000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white" alt="PyCharm"/>
@@ -24,11 +26,12 @@
 <img decoding="async" src="https://img.shields.io/badge/GitHub-000000.svg?&style=for-the-badge&logo=GitHub&logoColor=white" alt="GitHub"/>
 <img decoding="async" src="https://img.shields.io/badge/Selenium-008000?style=for-the-badge&logo=Selenium&logoColor=white" alt="Selenium"/>
 <img decoding="async" src="https://img.shields.io/badge/Pytest-0052CC?style=for-the-badge&logo=pytest&logoColor=white" alt="pytest"/>
-<img decoding="async" src="https://img.shields.io/badge/Pip-30D5C8?style=for-the-badge&logo=Pip&logoColor=white" alt="Pip"/>
+<img decoding="async" src="https://img.shields.io/badge/Pip-D80B01?style=for-the-badge&logo=Pip&logoColor=white" alt="Pip"/>
 
 
 ### :fireworks: *Descripción del Aplicativo BugBank*
-- Bug Banks es una aplicación que crea rutas y calcula la duración y precio del viaje para diferentes tipos de transporte. La interfaz es bastante sencilla, contiene dos campos para las direcciones: "Desde" y "Hasta". Además, cuenta con tres modos ("Óptimo", "Flash" y "Personal"), así como íconos para los tipos de transporte (automóvil del usuario, a pie, taxi, bicicleta, scooter o compartir un automóvil). Se realizará la automatización de las pruebas de la selección de la tarifa Comfort y el llenado de su formulario para el pedido y la verificación de la confirmación.
+- Bug Banks es una aplicación de banca financiera que permite realizar transferencias, retiros, pagos y beneficios, estos dos últimos en desarrollo. La interfaz es bastante sencilla, contiene dos pantallas principales, la de inicio y el del formulario de registro. El formulario de acceso consta de 2 campos obligatorios que permite el acceso a los usuarios y registros válidos, no se autoriza el acceso a usuarios no válidos o no registrados. Para el formulario de registro, se permiten aquellos registros validos dentro de los parametros y rangos establecidos y al registrarse una cuenta exitosamente debe mostrarse creada número de cuenta y son dirigidos a la página de inicio. La pantalla de servicios disponibles cuenta con las opciones de: trnasferis, pagos, extrato y beneficio, como se menciono anteriormente, boton de salir, información de la cuenta y saldo.
+- Se realizará la automatización de las pruebas del llenado del formulario de registro y de acceso para el servicion de banca.
 
 ### :page_facing_up: *Lista de Comprobación de Pruebas:*  
 
@@ -38,9 +41,10 @@
 4. Rellenar campo password del formulario de registro.
 5. Rellenar campo de confirmación de password del formulario de registro.
 6. Selección de botonde Cadastar del formulario de registro.
-7. Ingresar email en pagina de inicio.
-8. Ingresar password en página de inicio.
-9. Hacer clic en botón accesar.
+7. Ventana emergente de confirmación, aceptar.
+8. Ingresar email en pagina de inicio.
+9. Ingresar password en página de inicio.
+10. Hacer clic en botón accesar.
 
 ### :file_folder: *Archivos:* 
 1. Data.py (Datos)
@@ -48,13 +52,11 @@
 3. Test_cases_BugBank (funciones de casos de prueba)
 4. README (Descripcion del contenido)
 
-### :paw_prints: *Pasos a seguir metodología POM:* 
+### :paw_prints: *Pasos a seguir para la ejecución de las pruebas con metodología POM:* 
 - Conexión al servidor medienta la URL.
-- Se crean los localizadores de cada uno de los elementos que se utilizarán en las pruebas.
-- Se crea __init__ qué es el constructor de la clase BugBankPage, para crear nuevas instancias de la clase y 
-las funciones para sus atributos.
-- Se agrega WebDriverWait que permite establecer tiempos de espera para la carga y verificación de datos en la 
-secuencia de las pruebas automatizadas.
+- Se crean los localizadores de cada uno de los elementos que se utilizarán en las pruebas con DOM y Devtools.
+- Se crea __init__ qué es el constructor de la clase BugBankPage, para crear nuevas instancias de la clase y las funciones para sus atributos.
+- Se agrega WebDriverWait que permite establecer tiempos de espera para la carga y verificación de datos en la secuencia de las pruebas automatizadas.
 
   - Prueba 1. 
 Se crean lo métodos para los campos de entrada e ingresar las direcciones utilizando;
@@ -72,7 +74,7 @@ retrieve_phone_code que devuelve el codigo de confirmación.
 Se crean los métodos para los campos de entrada e ingresar número y código de la tarjeta con .click(), 
 .send_keys(). Posteriormente se verifica la seleccion de la tarjeta ingresada con .is_enabled() y .text para realizar
 la verificación de los datos y la seleción del método de pago.
-### :paw_prints: *Pasos a seguir para la ejecución de las pruebas:* 
+
 
 ### 🧪 *Resultados de las pruebas:* 
  La documentación de las pruebas se desarrollaro en los siguientes archivos disponibles.
@@ -84,8 +86,14 @@ la verificación de los datos y la seleción del método de pago.
 ### :page_facing_up: *Resumen del informe:* 
  - Informe del producto:
 
-Se realizaron las pruebas del producto Bug Bank, algunas de las fallas se encuentran en la creación de kit, los datos de entrada no cumplen con los requisitos y sus parámetros. Otras funciones importantes que fallan son las de eliminación de carritos, una de las funciones principales que afectan de manera directa el funcionamiento de la app. Finalmente los cálculos de los costos del servicio de entrega, no corresponden a los establecidos en los requisitos, algunos de los parámetros y sus restricciones, no concuerdan con los costos y el horario disponible en relación al número de productos y su peso. Por lo que se notifica un estado no aprobado y de corrección. 
+Se realizaron las pruebas del producto Bug Bank, algunas de las fallas se encuentran en el formulario de registro son: (            ), los datos de entrada no cumplen con los requisitos y sus parámetros. Otras funciones importantes que fallan son:(        ), una de las funciones principales que afectan de manera directa el funcionamiento de la app. 
+
+Finalmente los cálculos de los costos del servicio de entrega, no corresponden a los establecidos en los requisitos, algunos de los parámetros y sus restricciones, no concuerdan con los costos y el horario disponible en relación al número de productos y su peso. Por lo que se notifica un estado no aprobado y de corrección. 
 
 
    
 <div id="header" align="center"> 
+
+![image](https://github.com/user-attachments/assets/a2c62116-9d5f-406a-a3ef-37dbc45e89c0)
+
+
