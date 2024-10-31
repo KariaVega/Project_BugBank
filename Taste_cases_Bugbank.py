@@ -1,7 +1,7 @@
-import Data
-import time
+import unittest
 from selenium import webdriver
 from main import BugBankPage
+from data import Data
 
 
 class TestBugBank:
@@ -18,6 +18,7 @@ class TestBugBank:
         self.driver.get(Data.Bug_Bank_url)
         bugbank_page = BugBankPage(self.driver)
         bugbank_page.click_register_button1()
+        self.assertEqual(self.driver.current_url, "https://www.ejemplo.com/registro")  # Reemplaza con la URL esperada
 
     # Prueba 2 Rellenar campo de email y name
     def test_set_data_logging(self):
@@ -25,6 +26,8 @@ class TestBugBank:
         email_field = Data.email_field
         name_field = Data.name_field
         bugbank_page.set_data_logging(email_field, name_field)
+        self.assertEqual(bugbank_page.get_email_field(), email_field)
+        self.assertEqual(bugbank_page.get_name_field(), name_field)
         assert bugbank_page.get_email_field() == email_field
         assert bugbank_page.get_name_field() == name_field
 
