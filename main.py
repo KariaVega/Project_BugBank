@@ -18,18 +18,12 @@ class BugBankPage:
     # Prueba 1 -------------------------- Pagina de inicio Botón de Registro 1
     def click_register_button1(self):
         WebDriverWait(self.driver, 6).until(expected_conditions.visibility_of_element_located(self.register_button1))
-        self.driver.find_element(*self.register_button1).is_enabled()
-        WebDriverWait(self.driver, 6).until(expected_conditions.visibility_of_element_located(self.register_button1))
         self.driver.find_element(*self.register_button1).click()
         # no hay que dar clic ya que se verifica que este disponible
 
     def check_text_register_button1(self):
         return self.driver.find_element(*self.text_register_button1).text
         # verifica el elemento por el texto
-
-    def select_register_button1(self):
-        self.click_register_button1()
-        self.check_text_register_button1()
 
     # Prueba 2 -------------------------- Página de Registro, campos email y name
     def set_email_field(self, fill_email):
@@ -68,8 +62,8 @@ class BugBankPage:
         return self.driver.find_element(*self.confirmation_field).get_property('value')  # estos vienen de los localizadores
 
     def set_register_password(self, password_field, confirmation_field):
-        self.set_email_field(password_field)   # estos vienen de data
-        self.set_name_field(confirmation_field)  # estos vienen de data
+        self.set_password_field(password_field)   # estos vienen de data
+        self.set_confirmation_field(confirmation_field)  # estos vienen de data
 
     # Prueba 4 -------------------------- Página de Registro, botón Registro2
 
