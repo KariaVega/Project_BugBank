@@ -76,12 +76,8 @@ Se crean los métodos para los campos de entrada e ingresar número y código de
 la verificación de los datos y la seleción del método de pago.
 
 
-### 🧪 *Resultados de las pruebas:* 
- La documentación de las pruebas se desarrollaro en los siguientes archivos disponibles.
 
-#### :file_folder: Documentación para el Backend (*API*):
-  - Listas de comprobación: - [Link de Lista de comprobación]()
-  - Reporte y seguimiento de errores: - [Link de Reporte de Errores]()
+
 
 ### :page_facing_up: *Resumen del informe:* 
  - Informe del producto:
