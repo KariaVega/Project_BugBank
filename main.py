@@ -4,10 +4,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BugBankPage:
-    register_button1 = (By.XPATH, '//div[@id="__next"]//div[@class="login__buttons"]//font[text()="Registro"]')
-    text_register_button1 = (By.XPATH, '')
-    email_field = (By.XPATH, '//div[@id="__next"]//div[@class="style__ContainerFieldInput-sc-s3e9ea-0 gQAEIG input__child"]//input[@type="email"]')
-    name_field = (By.XPATH, '//input[@type="name"]')
+    register_button1 = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[1]/form/div[3]/button[2]')
+    text_register_button1 = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[1]/form/div[3]/button[2]')
+    email_field = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[2]/form/div[2]/input')
+    name_field = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[2]/form/div[3]/input')
     password_field = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[2]/form/div[4]/div/input')
     confirmation_field = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[2]/form/div[5]/div/input')
     register_button2 = (By.XPATH, '//*[@id="__next"]/div/div[2]/div/div[2]/form/button')
